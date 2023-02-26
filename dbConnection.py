@@ -1,4 +1,5 @@
 import mysql.connector
+import hashlib
 
 db = mysql.connector.connect(
     host="localhost",
@@ -15,8 +16,8 @@ def login(user, pwd):
     result = cursor.fetchone()
     if result is None:
         return False
-    storedpwd = result[4]
-    return storedpwd == pwd
+    storedPwd = result[4]
+    return storedPwd == hashlib.sha256(bytes(pwd, 'utf-8')).hexdigest()
 
 
 def signup(fname, lname, user, pwd, phone, email):
@@ -25,9 +26,10 @@ def signup(fname, lname, user, pwd, phone, email):
         return "Invalid"
 
     cursor = db.cursor()
+    hashedPwd = hashlib.sha256(bytes(pwd, 'utf-8')).hexdigest()
     # need to check for sql injections here
     cursor.execute(
-        f"INSERT INTO members (first_name, last_name, username, password, phone, email) VALUES ('{fname}', '{lname}', '{user}', '{pwd}', '{phone}', '{email}');")
+        f"INSERT INTO members (first_name, last_name, username, password, phone, email) VALUES ('{fname}', '{lname}', '{user}', '{hashedPwd}', '{phone}', '{email}');")
     db.commit()
 
     result = cursor.rowcount
