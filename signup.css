@@ -37,8 +37,8 @@ input[type="email"] {
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: Grey;
+    color: Black;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
