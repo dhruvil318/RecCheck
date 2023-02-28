@@ -8,9 +8,9 @@ def email_alert(body, to):
     msg.set_content(body)
     msg['to'] = to
 
-    user = "emailaddress@gmail.com"
+    user = "jmanquachcoder@gmail.com"
     msg['from'] = user
-    password = "API_key"
+    password = "guerybuwnvkhnbkk"
 
     text = smtplib.SMTP("smtp.gmail.com", 587)
     text.starttls()
@@ -21,4 +21,4 @@ def email_alert(body, to):
 
 
 if __name__ == "__main__":
-    email_alert("Hello world", "phonenumber@vtext.com")
+    email_alert("Hello world", "7273161388@vtext.com")

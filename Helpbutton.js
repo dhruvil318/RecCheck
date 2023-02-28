@@ -1,6 +1,6 @@
 //original code for help button
-const helpBtn = document.getElementById("helpBtn");
-helpBtn.addEventListener("click", function() {
+const helpbutton = document.getElementById("helpbutton");
+helpbutton.addEventListener("click", function() {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
