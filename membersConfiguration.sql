@@ -10,4 +10,3 @@ create table members (
     email varchar (50),
     primary key (member_id)
 );
--- insert into reccheck.members (first_name, last_name, username, password, phone, email) values ('John', 'Doe', 'johndoe1', 'plaintextpwd', '1234567890', 'johndoe@email.com');
