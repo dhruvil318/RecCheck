@@ -19,5 +19,8 @@ def email_alert(body, to):
 
     text.quit()
 
+
 if __name__ == "__main__":
     email_alert("Hello world", "@vtext.com")
+    
+    
