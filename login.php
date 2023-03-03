@@ -50,7 +50,7 @@
 
 			$conn = new mysqli("reccheckdb.ctrhgcjnjceq.us-east-1.rds.amazonaws.com", "team17", "mIqmpqkB4McGexJiD7lV","reccheck");
 			if(!$conn->ping()){
-				echo "Error connecting to db";
+				echo "<script>alert(Error connecting to database);</script>";
 			}
 
 			$result = $conn->query("SELECT * FROM members WHERE username = '$user'");
@@ -61,8 +61,7 @@
 				$stored_pwd = $row[4];
 				
 				if($stored_pwd == $hashed_pwd){
-					header("location: success.php?fname=$first_name&lname=$last_name");
-					echo "<script>alert('Welcome $first_name');</script>";
+					header("location: success.php?first_name=$first_name&last_name=$last_name");
 				}
 				else{
 					echo "<script>alert('Incorrect password');</script>";
