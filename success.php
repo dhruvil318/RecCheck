@@ -42,43 +42,10 @@
 	 </div>
 	</nav>
   </header>
-  <?php
-$user = $_POST["username"];
-$pwd = $_POST["password"];
-$hashed_pwd = hash("sha256", "$pwd");
-
-$conn = new mysqli("reccheckdb.ctrhgcjnjceq.us-east-1.rds.amazonaws.com", "team17", "mIqmpqkB4McGexJiD7lV","reccheck");
-if(!$conn->ping()){
-    echo "Error connecting to db";
-}
-
-$result = $conn->query("SELECT * FROM members WHERE username = '$user'");
-if($result->num_rows == 1){
-    $row = $result->fetch_row();
-    $first_name = $row[1];
-    $stored_pwd = $row[4];
+    <?php
+        $fname = $_GET["fname"];
+        echo "<h1>Welcome $fname</h1>";
+    ?>
     
-    if($stored_pwd == $hashed_pwd){
-        header("location: success.php?fname=$first_name");
-        echo "<script>alert('Welcome $first_name');</script>";
-    }
-    else{
-        echo "<script>alert('Incorrect password');</script>";
-    }
-}
-else{
-    echo "<script>alert('Username does not exist');</script>";
-}
-?>
-<form method="post" action="login.php">
-
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" required>
-        
-		<label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-        
-		<input type="submit" value="Log In">
-    </form>
 </body>
 </html>
