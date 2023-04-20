@@ -1,0 +1,115 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  /* Style for the navigation bar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-right: 1rem;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: rgb(0, 157, 255);
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label,
+input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+}
+
+input[type="button"] {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+
+body ul {
+    margin-top: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+list {
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+
+ /* Style for the footer */
+ footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  footer .row {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer .col-sm {
+    text-align: center;
+  }
